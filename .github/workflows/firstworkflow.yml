@@ -9,3 +9,16 @@ jobs:
         run: echo "Hi This is first github workflow"
       - name: checking OS release for github workflow
         run: cat /etc/os-release 
+      - name: calling sleep
+        run: sleep 20
+  job2:
+     name: Job2
+     runs-on: ubuntu-latest
+     steps:
+       - name: checking the host name for runner 
+         run: hostname
+       - name: running multiple commands
+         run: |
+           echo "hi from hello world"
+           echo "current time is `date`"
+           sleep 20
