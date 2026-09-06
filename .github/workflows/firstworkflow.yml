@@ -14,6 +14,11 @@ jobs:
         uses: actions/checkout@v6.1.0
       - name: Step 3 - pwd ls hostname
         run: |
-          pwd
+          echo `pwd` >> myartifact.txt 
           ls -altr
           hostname
+      - name: Step 4 - upload a single file artifact
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name : single_file
+          path : ./myartifact.txt
