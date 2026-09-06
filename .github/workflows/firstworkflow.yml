@@ -25,7 +25,7 @@ jobs:
   job3: 
     name: Job3
     needs: job1
-    runs-on: windows-latesting
+    runs-on: windows-latest
     steps:
       - name: Job with single dependency
         run: sleep 10
