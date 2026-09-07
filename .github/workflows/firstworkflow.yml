@@ -8,6 +8,12 @@ on:
   pull_request:
     branches:
       - main
+
+env:
+  ENV_TYPE: DEV
+  APP_USER: Dev_user
+  APP_Port: 80
+  
 jobs:
   job1:
     name: Job1
@@ -49,4 +55,7 @@ jobs:
         run: |
           pwd
           ls -altr
- 
+      - name: Referring the env variables.
+        run: |
+          echo "[INFO] Running deployment for $ENV_TYPE with user $APP_USER"
+          echo "[INFO] once deployed the application is available in port number $APP_Port"
