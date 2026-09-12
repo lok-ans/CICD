@@ -87,7 +87,7 @@ jobs:
         echo "[INFO] password for ${{ vars.USER }} is ${{ secrets.PASSWORD }}"
     environment:
       name: STAGING
-    if: github.ref == 'refs/heads/dev'
+    if: github.head_ref == 'refs/heads/dev'
   Production:
     name: production deployment.
     runs-on: ubuntu-latest
