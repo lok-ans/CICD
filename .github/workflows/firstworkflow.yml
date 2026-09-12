@@ -62,3 +62,17 @@ jobs:
       - name: Referring Repository Secrets
         run: |
           echo "[INFO] Application passsord is ${{ secrets.APP_PASSWORD }}"
+  job3:
+    name: Job3
+    needs:
+      - job1
+      - job2
+    runs-on: ubuntu-latest
+    steps:
+     - name: Referring Context or built-in Variables
+       run: |
+         echo "[INFO] Triggered by ${{ github.event_name }}"
+         echo "[INFO] New changes are made by ${{ github.actor }} in ${{ github.ref_name }} branch"
+         echo "[INFO] The current step is running in ${{ runner.os }}"
+         echo "[INFO] Current job ID is ${{ job.check_run_id}}"
+      
