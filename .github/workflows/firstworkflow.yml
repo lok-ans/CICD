@@ -62,6 +62,7 @@ jobs:
       - name: Referring Repository Secrets
         run: |
           echo "[INFO] Application passsord is ${{ secrets.APP_PASSWORD }}"
+  
   job3:
     name: Job3
     needs:
@@ -75,6 +76,7 @@ jobs:
          echo "[INFO] New changes are made by ${{ github.actor }} in ${{ github.ref_name }} branch"
          echo "[INFO] The current step is running in ${{ runner.os }}"
          echo "[INFO] Current job ID is ${{ job.check_run_id}}"
+  
   Staging:
     name: stage deployment.
     runs-on: ubuntu-latest
@@ -87,7 +89,8 @@ jobs:
         echo "[INFO] password for ${{ vars.USER }} is ${{ secrets.PASSWORD }}"
     environment:
       name: STAGING
-    if: github.head_ref == 'refs/heads/dev'
+    if: github.head_ref == 'dev'
+  
   Production:
     name: production deployment.
     runs-on: ubuntu-latest
