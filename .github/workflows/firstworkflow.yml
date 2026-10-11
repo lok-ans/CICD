@@ -62,7 +62,7 @@ jobs:
         with: 
           fetch-depth: 0
       - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-actions@v6
-            
+        uses: SonarSource/sonarqube-scan-action@v6
+
         
      
